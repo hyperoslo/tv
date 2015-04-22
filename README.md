@@ -2,8 +2,7 @@
 
 ![TV](https://raw.githubusercontent.com/hyperoslo/tv/gh-pages/assets/preview.jpg)
 
-Whatever's in [`index.html`](http://opensource.hyper.no/tv) of the `gh-pages` branch of this
-repository goes on the TV in our lobby!
+Whatever's in [`index.html`](http://opensource.hyper.no/tv) goes on the TV in our lobby!
 
 ## Usage
 

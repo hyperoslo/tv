@@ -26,36 +26,20 @@
       }
 
       h1 {
-        font-size: 60px;
+        font-size: 70px;
         margin: 20px 0
-      }
-
-      h2 {
-        font-size: 25px;
-        margin: 0
       }
 
       .headline {
         margin-bottom: 80px;
       }
 
+      .greeting { font-size: 25px }
+
     </style>
 
     <script>
-      function getStars() {
-        $.ajax({
-          dataType: "json",
-          url: "https://api.github.com/repos/hyperoslo/Sync",
-          success: function(data, textStatus) {
-            $("#stars").text(data.watchers);
-          }
-        });
-      }
-
       $(document).ready(function() {
-        getStars();
-
-        setInterval(getStars, 60000);
       });
     </script>
   </head>
@@ -63,20 +47,11 @@
   <body>
     <div class="container">
       <div class="headline">
-        <h2>
-          The
-        </h2>
-        <h1>
-          "Johannes brings cake to celebrate 1000 stars on GitHub"
-        </h1>
-        <h2>
-          countdown
-        </h2>
+        <h1>So Long, and Thanks<br> for All the Fish</h>
       </div>
 
-      <h1 class="counter">
-        <i class="fa fa-star"></i> <span id="stars"></span> / 1000
-      </h1>
+      <p class="greeting">LLAP, Espen</p>
+
     </div>
   </body>
 

@@ -27,7 +27,10 @@
 
       h1 {
         font-size: 60px;
-        margin: 20px 0
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 1);
+        color: #f57d2d;
+        padding: 30px 20px 20px 20px;
       }
 
       h2 {
@@ -37,6 +40,23 @@
 
       .headline {
         margin-bottom: 80px;
+      }
+
+      @-webkit-keyframes pulsate {
+        0% { -webkit-transform: scale(0.9) }
+        80% { -webkit-transform: scale(0.9) }
+        90% { -webkit-transform: scale(1.0) }
+        100% { -webkit-transform: scale(0.9) }
+      }
+
+      .heart {
+        -webkit-animation: pulsate 3s infinite;
+      }
+
+      .instructions {
+        position: fixed;
+        bottom: 20px;
+        width: 100%
       }
 
     </style>
@@ -72,16 +92,18 @@
     <div class="container">
       <div class="headline">
         <h1>
-          Your thing here!
+          Your thing here
         </h1>
         <h2>
           This TV is open source; make a pull request to hyperoslo/tv to change it!
         </h2>
-        <h2>
-          (or talk to Johannes if you don't know what that means)
-        </h2>
       </div>
     </div>
+
+    <p class="instructions">
+      ... or talk to Johannes if you don't know what that means
+      <i class="heart fa fa-heart"></i>
+    </p>
   </body>
 
 </html>

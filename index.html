@@ -62,23 +62,8 @@
         });
       }
 
-      // Set the contents of #stars to the amount of stars hyperoslo/Sync
-      // has on GitHub.
-      function getStars() {
-        $.ajax({
-          dataType: "json",
-          url: "https://api.github.com/repos/hyperoslo/Sync",
-          success: function(data, textStatus) {
-            $("#stars").text(data.watchers);
-          }
-        });
-      }
-
       $(document).ready(function() {
-        getStars();
-
         setInterval(refreshIfChanged, 60000);
-        setInterval(getStars, 60000);
       });
     </script>
   </head>
@@ -86,20 +71,14 @@
   <body>
     <div class="container">
       <div class="headline">
-        <h2>
-          The
-        </h2>
         <h1>
-          "Johannes brings cake to celebrate 1000 stars on GitHub"
+          Your thing here!
         </h1>
         <h2>
-          countdown
+          This TV is open source. Make a pull request to hyperoslo/tv to change it
+          (or talk to Johannes if you don't know what that means)!
         </h2>
       </div>
-
-      <h1 class="counter">
-        <i class="fa fa-star"></i> <span id="stars"></span> / 1000
-      </h1>
     </div>
   </body>
 

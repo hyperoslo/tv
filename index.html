@@ -14,19 +14,30 @@
         font-weight: bold;
         font-family: "proxima-nova";
         text-transform: uppercase;
-        text-align: center;
-        padding: 0;
-		margin:0;
+        text-align: center
+      }
+
+      .container {
+        position: relative;
+        top: 50%;
+        width: 80%;
+        transform: translateY(-50%);
+        margin: 0 auto;
       }
 
       h1 {
-        font-size: 20px;
-        margin: 20px 0;
-        color: #fff;
-		padding: 0;
-		margin: 0;
+        font-size: 60px;
+        margin: 20px 0
       }
 
+      h2 {
+        font-size: 25px;
+        margin: 0
+      }
+
+      .headline {
+        margin-bottom: 80px;
+      }
 
     </style>
 
@@ -51,20 +62,45 @@
         });
       }
 
+      // Set the contents of #stars to the amount of stars hyperoslo/facebook-messenger
+      // has on GitHub.
+      function getStars() {
+        $.ajax({
+          dataType: "json",
+          url: "https://api.github.com/repos/hyperoslo/facebook-messenger",
+          success: function(data, textStatus) {
+            $("#stars").text(data.watchers);
+          }
+        });
+      }
+
       $(document).ready(function() {
+        getStars();
+
         setInterval(refreshIfChanged, 60000);
+        setInterval(getStars, 60000);
       });
     </script>
   </head>
 
   <body>
+    <div class="container">
+      <div class="headline">
+        <h2>
+          The
+        </h2>
+        <h1>
+          "Johannes brings cake to celebrate 1000 stars on GitHub"
+        </h1>
+        <h2>
+          countdown
+        </h2>
+      </div>
 
-
-
-	<iframe style="position: absolute; left:0; top:0; width: 100%; height:100%" width="100%" height="100%" src="http://www.ustream.tv/embed/17074538?ub=ff720a&amp;lc=ff720a&amp;oc=ffffff&amp;uc=ffffff&amp;v=3&amp;wmode=direct&autoplay=true" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe>
-<h1 style="position: absolute; top:10px; left: 10px;">Live feed fra verdensrommet<h1>
-
-
+      <h1 class="counter">
+        <i class="fa fa-star"></i> <span id="stars"></span> / 1000
+      </h1>
+    </div>
   </body>
 
 </html>

@@ -62,12 +62,12 @@
         });
       }
 
-      // Set the contents of #stars to the amount of stars hyperoslo/Sync
+      // Set the contents of #stars to the amount of stars hyperoslo/facebook-messenger
       // has on GitHub.
       function getStars() {
         $.ajax({
           dataType: "json",
-          url: "https://api.github.com/repos/hyperoslo/Sync",
+          url: "https://api.github.com/repos/hyperoslo/facebook-messenger",
           success: function(data, textStatus) {
             $("#stars").text(data.watchers);
           }
